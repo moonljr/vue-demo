@@ -1,0 +1,47 @@
+
+//全局变量
+// $page_width: 1px * $env_ui_design_width;
+$footer_height: 100px;
+$z_index_top_bar: 99;
+$z_index_popup: 9999;
+
+//背景
+$body_bg: #fff;
+$content_bg: #fff;
+$secondary_bg: #55cdd1;
+
+//颜色
+$font_base_color: #333;
+$primary_color: #26a2ff;
+$secondary_color: #f5bf41;
+$light_color: $content_bg;
+$link_color: $font_base_color;
+$warning_color: #ea6f56;
+$light_gray: #999;
+$gray: #666;
+$border_color: #d9d9d9;
+
+//字号
+$font_size_s: 24px;
+$font_size_m: 28px;
+$font_size_l: 32px;
+$font_size_x: 36px;
+$font_size_2x: 40px;
+$font_size: $font_size_m;
+
+//行高
+$line_height: 1.4;
+
+//边框
+$border: 1Px solid $border_color;
+$border_radius: 16px;
+
+//边距
+$padding: 40px;
+
+// 混合
+@mixin ellipsis() {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}

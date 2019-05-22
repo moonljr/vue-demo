@@ -1,0 +1,279 @@
+@charset "UTF-8";
+@import "../../../node_modules/normalize.css";
+// @import "../../../node_modules/flex.css";
+@import "variables";
+
+/* 大写的Px不会被postcss-pxtorem转换成rem */
+
+// html {
+// 	font-size: 1Px * $env_root_font_size / 2; /* 兼容性处理 */
+// 	font-size: 100vw / $env_ui_design_width * $env_root_font_size;
+// }
+
+// @media screen and (min-width: 1Px * $env_ui_max_width) {
+// 	html {
+// 		font-size: 1Px * $env_ui_max_width / $env_ui_design_width * $env_root_font_size;
+// 	}
+// 	body{
+// 		max-width: 1Px * $env_ui_max_width;
+// 	}
+// }
+
+body, input, button, textarea {
+	font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
+	font-weight: 400;
+	-webkit-font-smoothing: antialiased;
+	font-size: $font_size;
+	line-height: $line_height;
+	color: $font_base_color;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	min-height: 100vh;
+	margin: 0 auto;
+	background: $body_bg;
+}
+
+a {
+	color: $link_color;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+input, button, textarea {
+	border: 0;
+	outline: none;
+	-webkit-appearance: none;
+	background-color: $content_bg;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+}
+
+ul, ol, li, dl, dt, dd, p {
+	padding: 0;
+	margin: 0;
+}
+
+li {
+	list-style: none;
+}
+
+img {
+	border: 0;
+}
+
+em, i {
+	font-style: normal;
+}
+
+em {
+	color: $primary_color;
+}
+
+label {
+	cursor: inherit;
+}
+
+.primary {
+	color: $primary_color;
+}
+
+.gray {
+	color: $gray;
+}
+
+.light-gray {
+	color: $light_gray;
+}
+
+.error {
+	color: $warning_color;
+}
+
+input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+	color: $light_gray;
+}
+input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	color: $light_gray;
+}
+input::-moz-placeholder { /* Mozilla Firefox 19+ */
+	color: $light_gray;
+}
+input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+	color: $light_gray;
+}
+
+.ellipsis {
+	@include ellipsis;
+}
+
+.iconfont {
+	font-size: inherit;
+}
+
+.icon-loading {
+	&:before {
+		display: inline-block;
+		line-height: 1;
+		animation: rotating 3s linear infinite;
+	}
+}
+
+@keyframes rotating {
+	0% {
+		transform: rotateZ(0)
+	}
+	100% {
+		transform: rotateZ(360deg)
+	}
+}
+
+.scroll {
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+.btn {
+	display: inline-block;
+	padding: 14px $padding;
+	border: 1px solid $border_color;
+	border-radius: 100px;
+	box-sizing: border-box;
+	margin: 0 auto;
+	text-align: center;
+	color: #4a4a4a;
+	font-size: $font_size_m;
+	line-height: 1.5;
+	cursor: pointer;
+	background-color: $content_bg;
+	-webkit-tap-highlight-color: transparent;
+	user-select: none;
+
+	&:active {
+		background-color: darken($content_bg, 5%);
+	}
+
+	/* 尺寸 */
+	&.small {
+		font-size: $font_size_s;
+	}
+
+	&.medium {
+		font-size: $font_size_l;
+		padding: 15px $padding;
+	}
+
+	&.large {
+	}
+
+	/* 颜色 */
+	&.primary {
+		color: $light_color;
+		background-color: $primary_color;
+		border-color: $primary_color;
+		&:active {
+			background-color: darken($primary_color, 15%);
+		}
+	}
+
+	&.secondary {
+		color: $light_color;
+		background-color: $secondary_color;
+		border-color: $secondary_color;
+		&:active {
+			background-color: darken($secondary_color, 15%);
+		}
+	}
+
+	&.warning {
+		color: $light_color;
+		background-color: $warning_color;
+		border-color: $warning_color;
+		&:active {
+			background-color: darken($warning_color, 15%);
+		}
+	}
+
+	&.gray {
+		color: $light_gray;
+	}
+
+	/* 空心样式 */
+	&.plain {
+		&.primary {
+			color: $primary_color;
+			background-color: $content_bg;
+			&:active {
+				background-color: lighten($primary_color, 30%);
+			}
+		}
+		&.secondary {
+			color: $secondary_color;
+			background-color: $content_bg;
+			&:active {
+				background-color: lighten($secondary_color, 30%);
+			}
+		}
+		&.warning {
+			color: $warning_color;
+			background-color: $content_bg;
+			&:active {
+				background-color: lighten($warning_color, 30%);
+			}
+		}
+	}
+
+	&[disabled], &.disabled {
+		cursor: default;
+		pointer-events: none;
+		color: $light_color !important;
+		background-color: $border_color !important;
+		border-color: $border_color !important;
+	}
+
+	label {
+		cursor: inherit;
+		pointer-events: none;
+	}
+}
+
+
+
+input.text {
+	display: inline-block;
+	padding: 15px $padding;
+	border: 1px solid $border_color;
+	border-radius: 100px;
+	box-sizing: border-box;
+	line-height: 48px;
+}
+
+.checkbox {
+	display: inline-block;
+	cursor: pointer;
+	input {
+		display: none;
+	}
+	&:before {
+		display: inline-block;
+		content: "\e609";
+		font-family: iconfont;
+		color: $secondary_color;
+		margin-right: 4px;
+	}
+	span {
+		display: inline-block;
+	}
+	&.checked {
+		&:before {
+			content: "\e601";
+		}
+	}
+}
+
