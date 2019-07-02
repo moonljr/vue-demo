@@ -17,7 +17,7 @@ const debounce = (fun, delay = 500, before) => {
   }
 }
 export default {
-  name: 'Debounce',
+  name: 'debounce',
   functional: true, // 静态组件 当不声明functional时该组件同样拥有上下文以及生命周期函数
   render (createElement, context) {
     const before = context.props.before

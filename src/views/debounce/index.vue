@@ -1,13 +1,6 @@
 <template>
-  <div class="demo">
-    <h1>demo</h1>
-    <!-- $attrs 与 ￥listeners 的使用 -->
-    <g-select clearable
-      placeholder='asa'
-      item='选择框'
-      @change="change"
-      @clear='clear'
-      @blur='selectBlur'></g-select>
+  <div class="debounce">
+    <h1>debounce</h1>
 
     <debounce time="300"
       :before="beforeFun">
@@ -25,22 +18,13 @@
 <script>
 // import gSelect from '@/components/global/gSelect';
 export default {
-  name: 'demo',
+  name: 'demo_debounce',
   data () {
     return {
       inpModel: 1
     }
   },
   methods: {
-    selectBlur(e) {
-      console.log('selectBlur', e);
-    },
-    change (e) {
-      console.log('eee', e);
-    },
-    clear (e) {
-      console.log('clear', '选择的值被清空了');
-    },
     inputChange (e) {
       console.log(e.target.value, '防抖')
     },
@@ -56,7 +40,7 @@ export default {
 </script>
 
 <style lang='scss'>
-.demo {
+.debounce {
   text-align: left;
 }
 </style>

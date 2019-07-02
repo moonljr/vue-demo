@@ -1,11 +1,13 @@
 # vue-demo
 ### vue 常用技巧
 - 使用命令行创建组件
+- 使用命令行创建页面
 - 全局注册filter
 - 全局注册mixin
 - 按模块划分路由
 
 ### $attrs 与 $listeners 的使用
+> 示例在demo组件
 ```js
 // 一般应用与封装第三方UI组件库的时候使用
 // 在gSelect子组件中

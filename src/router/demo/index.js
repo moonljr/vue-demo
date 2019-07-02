@@ -5,13 +5,18 @@ export default [{
     component: Home
   },
   {
-    path: '/about',
-    name: 'about',
-    component: () => import( /* webpackChunkName: "about" */ '@/views/About.vue')
-  },
-  {
     path: '/demo',
     name: 'dmeo',
     component: () => import( /* webpackChunkName: "about" */ '@/views/demo.vue')
-  }
+  },
+  {
+    path: '/index',
+    name: 'index',
+    component: () => import( /* webpackChunkName: "about" */ '@/views/index')
+  },
+  {
+    path: '/debounce',
+    name: 'debounce',
+    component: () => import( /* webpackChunkName: "about" */ '@/views/debounce')
+  },
 ]
