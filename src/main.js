@@ -9,6 +9,7 @@ import './components'
 //  自动注册全局filter
 import './filter'
 import globalMixins from "@/mixins";
+import '@/assets/styles/index.scss'
 
 Vue.use(ElementUI);
 Vue.config.productionTip = false;

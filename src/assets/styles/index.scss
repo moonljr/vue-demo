@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import "../../../node_modules/normalize.css";
+// @import "../../../node_modules/normalize.css";
 // @import "../../../node_modules/flex.css";
 @import "variables";
 
@@ -23,7 +23,7 @@ body, input, button, textarea {
 	font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
 	font-weight: 400;
 	-webkit-font-smoothing: antialiased;
-	font-size: $font_size;
+	font-size: 16px;
 	line-height: $line_height;
 	color: $font_base_color;
 	margin: 0;
@@ -42,12 +42,12 @@ a {
 	text-decoration: none;
 }
 
-input, button, textarea {
-	border: 0;
-	outline: none;
-	-webkit-appearance: none;
-	background-color: $content_bg;
-}
+// input, button, textarea {
+// 	border: 0;
+// 	outline: none;
+// 	-webkit-appearance: none;
+// 	background-color: $content_bg;
+// }
 
 h1, h2, h3, h4, h5, h6 {
 	margin: 0;
@@ -275,5 +275,10 @@ input.text {
 			content: "\e601";
 		}
 	}
+}
+
+.cr {
+	background-color: #f00;
+	color: #fff;
 }
 

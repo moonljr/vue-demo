@@ -8,6 +8,21 @@
     <router-view/>
   </div>
 </template>
+<script>
+export default {
+  name: 'APP',
+  provide () {
+    return {
+      user: this.user
+    }
+  },
+  data () {
+    return {
+      user: 'moonljr'
+    }
+  }
+}
+</script>
 
 <style lang="scss">
 #app {
