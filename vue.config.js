@@ -20,6 +20,8 @@ module.exports = {
   outputDir: "dist",
   productionSourceMap: true,
   lintOnSave: false,
+  // 是否使用包含运行时编译器的 Vue 构建版本
+  runtimeCompiler: true,
   chainWebpack: config => {
     config.module
       .rule("images")

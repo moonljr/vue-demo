@@ -14,6 +14,19 @@
         <!-- prop='email'> -->
         <iinput v-model="formValidate.email"></iinput>
       </fromItem>
+      <fromItem label='单选'
+        prop='checkbox'>
+        <iCheckbox v-model="formValidate.single">上海</iCheckbox>
+      </fromItem>
+      <fromItem label='多选'
+        prop='checkboxmultiple'>
+        <checkboxGroup v-model="formValidate.multiple">
+          <i-checkbox label="option1">上海</i-checkbox>
+          <i-checkbox label="option2">北京</i-checkbox>
+          <i-checkbox label="option3">天津</i-checkbox>
+          <i-checkbox label="option4">成都</i-checkbox>
+        </checkboxGroup>
+      </fromItem>
     </ifrom>
     <button @click="handleSubmit">提交</button>
     <button @click="handleReset">重置</button>
@@ -23,13 +36,17 @@
 import ifrom from './components/from';
 import fromItem from './components/fromItem';
 import iinput from './components/input';
+import iCheckbox from '../checkbox/components/checkbox'
+import checkboxGroup from '../checkbox/components/checkbox-group'
 export default {
   name: 'fromCheck',
   data () {
     return {
       formValidate: {
         name: '',
-        email: ''
+        email: '',
+        single: '',
+        multiple: []
       },
       ruleValidate: {
         name: [
@@ -38,6 +55,12 @@ export default {
         email: [
           { required: true, message: '邮箱不能为空', trigger: 'blur' },
           { type: 'email', message: '邮箱格式不正确', trigger: 'blur' }
+        ],
+        checkbox: [
+          { required: true, message: '单选不能为空', trigger: 'blur' },
+        ],
+        checkboxmultiple: [
+          { required: true, message: '单选不能为空', trigger: 'blur' },
         ]
       }
     }
@@ -63,7 +86,9 @@ export default {
   components: {
     ifrom,
     fromItem,
-    iinput
+    iinput,
+    iCheckbox,
+    checkboxGroup
   }
 }
 </script>

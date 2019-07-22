@@ -1,5 +1,5 @@
 <template>
-<!-- 通过dispatch broadcast实现组件间的通信 -->
+  <!-- 通过dispatch broadcast实现组件间的通信 -->
   <div class="index">
     <p>----------index组件-------</p>
     <p>使用poprs的 validator 校验 size的传参
@@ -9,6 +9,7 @@
       @click.native="emitComponentbClick">按钮</g-buton>
     <p>通过provide-->inject获取到的数据 {{user}}</p>
     <!-- <componentb></componentb> -->
+    iccc>>>>>{{ICCC}}
   </div>
 </template>
 <script>
@@ -19,11 +20,19 @@ export default {
   inject: ['user'],
   data () {
     return {
-      indexmessage: ''
+      indexmessage: '',
+      arr: []
     }
   },
   created () {
     this.$on('emit-messageB', this.showIndexMessage);
+  },
+  computed: {
+    ICCC() {
+      if(this.arr.length === 0) {
+        return 1
+      }
+    }
   },
   methods: {
     showIndexMessage (text) {

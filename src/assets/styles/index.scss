@@ -254,28 +254,28 @@ input.text {
 	line-height: 48px;
 }
 
-.checkbox {
-	display: inline-block;
-	cursor: pointer;
-	input {
-		display: none;
-	}
-	&:before {
-		display: inline-block;
-		content: "\e609";
-		font-family: iconfont;
-		color: $secondary_color;
-		margin-right: 4px;
-	}
-	span {
-		display: inline-block;
-	}
-	&.checked {
-		&:before {
-			content: "\e601";
-		}
-	}
-}
+// .checkbox {
+// 	display: inline-block;
+// 	cursor: pointer;
+// 	input {
+// 		display: none;
+// 	}
+// 	&:before {
+// 		display: inline-block;
+// 		content: "\e609";
+// 		font-family: iconfont;
+// 		color: $secondary_color;
+// 		margin-right: 4px;
+// 	}
+// 	span {
+// 		display: inline-block;
+// 	}
+// 	&.checked {
+// 		&:before {
+// 			content: "\e601";
+// 		}
+// 	}
+// }
 
 .cr {
 	background-color: #f00;

@@ -10,6 +10,8 @@ import './components'
 import './filter'
 import globalMixins from "@/mixins";
 import '@/assets/styles/index.scss'
+import Alert from '../src/components/alert'
+Vue.prototype.$Alert = Alert
 
 Vue.use(ElementUI);
 Vue.config.productionTip = false;
